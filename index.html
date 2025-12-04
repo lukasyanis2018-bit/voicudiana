@@ -239,10 +239,10 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background: url('poze/p1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: 
+                radial-gradient(ellipse at top left, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(184, 149, 92, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, #0d1f17 0%, #1a2f26 50%, #152520 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -250,20 +250,8 @@
             overflow: hidden;
             padding-top: 80px;
         }
-
+        
         .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 15% 30%, rgba(201, 169, 97, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 85% 70%, rgba(201, 169, 97, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(184, 149, 92, 0.04) 0%, transparent 50%);
-            animation: float 25s ease-in-out infinite;
-        }
-
-        .hero::after {
             content: '';
             position: absolute;
             top: 0;
@@ -271,17 +259,23 @@
             right: 0;
             bottom: 0;
             background-image: 
-                linear-gradient(45deg, transparent 48%, rgba(201, 169, 97, 0.02) 49%, rgba(201, 169, 97, 0.02) 51%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(201, 169, 97, 0.02) 49%, rgba(201, 169, 97, 0.02) 51%, transparent 52%);
-            background-size: 80px 80px;
+                linear-gradient(90deg, rgba(201, 169, 97, 0.03) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(201, 169, 97, 0.03) 1px, transparent 1px);
+            background-size: 100px 100px;
             opacity: 0.3;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(40px, -40px) rotate(2deg); }
-            50% { transform: translate(-30px, 30px) rotate(-2deg); }
-            75% { transform: translate(30px, -20px) rotate(1deg); }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 0%, rgba(201, 169, 97, 0.1) 0%, transparent 40%),
+                linear-gradient(180deg, transparent 0%, rgba(13, 31, 23, 0.6) 100%);
+            pointer-events: none;
         }
 
         .hero .container {
